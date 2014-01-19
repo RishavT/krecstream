@@ -17,4 +17,4 @@ To Do:
 7. Add upload to YouTube/GDrive/Facebook support
 8. Add support for multiple screens
 9. Add support for keyboard shortcuts for switching overlays, etc. (how?)
-9. Add KWin Support
+10. Add KWin Support
