@@ -17,5 +17,4 @@ Features:
 10. Add KWin Support, such that ffmpeg is not mandatory~
 11. Create a Desktop Application which does the same thing as the widget~
 
-* -> Done
-~ -> Future plans, will be implemented in the 2nd stage/version.
+(* <=> Done; ~ <=> Future plans, will be implemented in the 2nd stage/version.)
