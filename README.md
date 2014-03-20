@@ -4,6 +4,7 @@ krecstream
 Desktop recorder + live streamer for KDE
 
 Features:
+
 1. D-Bus Python script that can stream to an rtmp service or record the desktop.*
 2. Make Plasma2 UI
 3. Add Overlay support
