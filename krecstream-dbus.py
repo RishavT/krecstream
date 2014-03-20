@@ -10,7 +10,7 @@ import signal
 
 class KRecStream(dbus.service.Object):
     def __init__(self):
-        busName = dbus.service.BusName('KRecStream', bus = dbus.SessionBus())
+        busName = dbus.service.BusName('krecstream.KRecStream', bus = dbus.SessionBus())
         dbus.service.Object.__init__(self, busName, '/KRecStream')
         self.recording_ids = {}
         self.streaming_ids = {}
@@ -28,23 +28,23 @@ class KRecStream(dbus.service.Object):
         print string
         self.streaming_ids[name] = subprocess.Popen(string + " & ", shell=True)
     
-    @dbus.service.method('com.rishav.KRecStream', in_signature = 'iiss', out_signature = '')
+    @dbus.service.method('krecstream.KRecStream', in_signature = 'iiss', out_signature = '')
     def startStream(self,w,h,url,name):
         os.system("kdialog --passivepopup 'recording started' 3")
         self.stream(w,h,url,name)
         
-    @dbus.service.method('com.rishav.KRecStream', in_signature = 's', out_signature = '')
+    @dbus.service.method('krecstream.KRecStream', in_signature = 's', out_signature = '')
     def stopStream(self,name):
         print "killing " + name
         os.system("kill " + str(self.streaming_ids[name].pid+1))
         del self.streaming_ids[name]
     
-    @dbus.service.method('com.rishav.KRecStream', in_signature = 'iis', out_signature = '')
+    @dbus.service.method('krecstream.KRecStream', in_signature = 'iis', out_signature = '')
     def startRecord(self,w,h,name):
         os.system("kdialog --passivepopup 'recording started' 3")
         self.record(w,h,name)
         
-    @dbus.service.method('com.rishav.KRecStream', in_signature = 's', out_signature = '')
+    @dbus.service.method('krecstream.KRecStream', in_signature = 's', out_signature = '')
     def stopRecord(self,name):
         print "killing"
         #self.recordID.kill()
