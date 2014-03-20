@@ -10,7 +10,7 @@ import signal
 
 class KRecStream(dbus.service.Object):
     def __init__(self):
-        busName = dbus.service.BusName('com.rishav.KRecStream', bus = dbus.SessionBus())
+        busName = dbus.service.BusName('KRecStream', bus = dbus.SessionBus())
         dbus.service.Object.__init__(self, busName, '/KRecStream')
         self.recording_ids = {}
         self.streaming_ids = {}
@@ -23,7 +23,8 @@ class KRecStream(dbus.service.Object):
         
     def stream(self,w,h,url,name):
         print "streaming"
-        string = 'ffmpeg -f x11grab -s ' +  str(w) + 'x' + str(h) + ' -r 15 -i :0.0 -preset fast -pix_fmt yuv420p -threads 0 -f flv "' + url + '"'
+        #string = 'ffmpeg -f x11grab -s ' +  str(w) + 'x' + str(h) + ' -r 15 -i :0.0 -preset fast -pix_fmt yuv420p -threads 0 -f flv "' + url + '"'
+        string = 'ffmpeg -f x11grab -s ' +  str(w) + 'x' + str(h) + ' -r 15 -i :0.0 -pix_fmt yuv420p -threads 0 -f flv "' + url + '"'
         print string
         self.streaming_ids[name] = subprocess.Popen(string + " & ", shell=True)
     
