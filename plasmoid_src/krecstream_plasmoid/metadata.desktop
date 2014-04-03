@@ -1,0 +1,17 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=KRecStream
+Comment=Plasmoid to record and stream your desktop
+Type=Service
+X-KDE-ParentApp=
+X-KDE-PluginInfo-Author=Rishav
+X-KDE-PluginInfo-Email=thakker.rishav@gmail.com
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-Name=krecstream
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=http://rishavt.github.com/krecstream
+X-KDE-ServiceTypes=Plasma/Applet
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/main.qml
+X-Plasma-RemoteLocation=
+X-KDE-PluginInfo-Category=Windows and Tasks
